@@ -1,0 +1,5 @@
+id,address,city,company_name,contact_name,employee,fax_number,gender,major_division_description,phone_number,provincesic_4_code,sales,sic_4_code,province,sic_4_code_description,title,zip_code,longitude,latitude
+1,10001 100 ave,La crete,Chamber Of Commerce,Peter Braun,1 to 4,7809282203.0,M,Membership Organizations,7809282278.0,NULL,NULL,8611,AB,Business associations,Manager,T0H2H0,-91.0734,42.0777
+2,300-714 1 st se,Calgary,First Capital Mgmt. Ltd.,Warren Dowd,NULL,4032659334.0,NULL,"Security & Commodity Brokers, Dealers, Exchanges",4032339352.0,NULL,NULL,6211,AB,Security brokers and dealers,President,T2G2G8,-99.1256,47.6771
+3,16135 114 ave nw,Edmonton,Plasti-Fab,Marc Brisebois,5 to 9,7804520161.0,M,"Building Matrials, Hrdwr, Garden Supply & Mobile",7804533718.0,NULL,$1 to 2.5 million,5211,AB,Lumber and other building materials,Manager,T5M2Z3,-113.6,53.563
+4,9844 106 st nw,Edmonton,Kay Holdgrafer Assoc,NULL,1 to 4,NULL,NULL,"Engineering, Accounting, Research, Management & R",7804249023.0,NULL,"$500,000 to $1 million",8742,AB,Management consulting services,NULL,T5K1B8,-102.862,48.9524

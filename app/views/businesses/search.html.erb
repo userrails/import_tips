@@ -1,0 +1,27 @@
+<h1>Timings</h1>
+<table>
+  <% for timing in @business %>
+    <tr>
+      <td>Monday: <%= timing.mon_from %> | <%= timing.mon_to %></td>
+    </tr>
+    <tr>
+      <td>Tuesday: <%= timing.tue_from %> | <%= timing.tue_to %></td>
+    </tr>
+    <tr>
+      <td>Wednesday: <%= timing.wed_from %> | <%= timing.wed_to %></td>
+    </tr>
+    <tr>
+      <td>Thursday: <%= timing.thur_from %> | <%= timing.thur_to %></td>
+    </tr>
+    <tr>
+      <td>Friday: <%= timing.fri_from %> | <%= timing.fri_to %></td>
+    </tr>
+    <tr>
+      <td>Saturday: <%= timing.sat_from %> | <%= timing.sat_to %></td>
+    </tr>
+    <tr>
+      <td>Sunday: <%= timing.sun_from %> | <%= timing.sun_to %></td>
+    </tr>
+  <% end %>
+</table>
+

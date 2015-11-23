@@ -1,0 +1,68 @@
+<h1>Imports#import</h1>
+
+<%@title%>
+
+<div id="import">
+  <%= form_tag upload_xls_imports_path, :multipart => true do %>
+    <table cellspacing="5">
+      <tr>
+        <td> <b> Import the canadian xls data </b> </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= file_field_tag :file, :style=>"width: 200px;" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <br />
+          <%= submit_tag "Import", :style=>"width:75px; border-radius:20px;" %>
+        </td>
+      </tr>
+    </table>
+  <%end%>
+</div>
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+  var geocoder = new google.maps.Geocoder();
+  var address = '4411 45th ave';
+
+  if (geocoder) {
+    geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        console.log(results[0].geometry.location);
+      }
+      else {
+        console.log("Geocoding failed: " + status);
+      }
+    });
+  }
+</script>
+
+<!-- csv code to upload-->
+<div id="import">
+  <%= form_tag upload_csv_imports_path, :multipart => true do %>
+    <table cellspacing="5">
+      <tr>
+        <td> <b> Import the csv file for check and this will import the appropriate datas</b> </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= file_field_tag :file, :style=>"width: 200px;" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <br />
+          <%= submit_tag "Import", :style=>"width:75px; border-radius:20px;" %>
+        </td>
+      </tr>
+    </table>
+  <%end%>
+</div>

@@ -1,0 +1,68 @@
+<%= form_for(:businessmerged, :url => search_businesses_path, :html => {:method => "GET" }) do |f| %>
+  <div id="search">
+    <table>
+      <tr>
+        <td><%= f.autocomplete_field :name, autocomplete_businessmerged_name_businesses_path, :placeholder => 'Enter business name' %></td>
+        <td><button type="submit">SUBMIT</button></td>
+      </tr>
+    </table>
+  </div><br />
+<% end %><br />
+
+<%= form_for(:businessmerged,
+  :url => search_businesses_path,
+  :html => {:method => "GET", :id => "searchForm"}
+) do |f|%>
+
+  <%= f.text_field :name, :class => "textField", :id => "keywords",
+    :placeholder => "enter the businessname or city", :size => "60px",
+    :style => "color:#aaa;margin:0px;"
+  %>
+
+<button type="submit" style="background: none; border: none;">
+  <%= image_tag("assets/search-icon.png", :class => 'search-icon') %>
+</button>
+
+<% end %>
+
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script type="text/javascript">
+
+  jQuery(document).ready(function($) {
+    if($("#city_stater").val() == ''){
+      $("#city_stater").val(geoplugin_city()+ ","+ geoplugin_regionCode());
+    }else{
+      $("#city_stater").val('<%= session[:city] %>');
+    }
+  });
+
+  jQuery(document).ready(function($) {
+    $("#city_stater").keyup(function(){
+      var cit = $(this).val();
+      $("#ajaxcity").show();
+      $.ajax({
+        url:'/businesses/cities',
+        data:{
+          city:cit
+        },
+        type:'GET',
+        dataType:'script',
+        success:function(data){}
+      });
+    });
+
+    $("#keywords").keyup(function(){
+      var cit = $(this).val();
+      $.ajax({
+        url:'/businesses/city_businesses',
+        data:{
+          name:cit
+        },
+        type:'GET',
+        dataType:'script',
+        success:function(data){}
+      });
+    });
+  });
+</script>
+
